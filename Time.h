@@ -1,6 +1,8 @@
 #include <iostream>
 #pragma once
 
+using namespace std;
+
 class Time
 {
 private:
@@ -10,22 +12,22 @@ private:
 
 public:
 
-    Time (float hours_, float minutes_)
-
-    Time ()
-
-    Time (const Time & T1)
-
-    Time & operator=(const Time & T2)
-
-    Time operator+(Time a)
-
     friend ostream & operator<<(ostream &OP, const Time &P4);
     friend Time operator*(Time copy_, double number);
     friend Time operator*(double number, Time copy_);
+
+    Time (float hours_, float minutes_);
+
+    Time ();
+
+    Time (const Time & T1);
+
+    Time & operator=(const Time & T2);
+
+    Time operator+(Time a);
 };
 
- Time operator*(Time copy_, double number)
+ /*Time operator*(Time copy_, double number)
     {
         Time result;
 
@@ -44,3 +46,4 @@ public:
 
         return result2;
     }
+    */

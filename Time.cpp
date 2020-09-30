@@ -22,7 +22,7 @@ Time::Time (const Time & T1)
     }
 
 
-Time Time & operator=(const Time & T2)
+Time& Time:: operator=(const Time & T2)
     {
         if (&T2 != this)
         {

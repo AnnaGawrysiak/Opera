@@ -1,68 +1,9 @@
-// Klasa powinna zawieraæ metodê resetuj¹c¹, metodê pozwalaj¹c¹ ustawiæ dowoln¹ godzinê
+// Klasa powinna zawieraÃ¦ metodÃª resetujÂ¹cÂ¹, metodÃª pozwalajÂ¹cÂ¹ ustawiÃ¦ dowolnÂ¹ godzinÃª
 
 #include <iostream>
 #include "Time.h"
 
 using namespace std;
-
-class Time
-{
-private:
-
-    float hours;
-    float minutes;
-
-public:
-
-    Time (float hours_, float minutes_)
-    {
-        hours = hours_;
-        minutes = minutes_;
-    }
-
-    Time ()
-    {
-        hours = 0;
-        minutes = 0;
-    }
-
-    Time (const Time & T1)
-    {
-        hours = T1.hours;
-        minutes = T1.minutes;
-    }
-
-    Time & operator=(const Time & T2)
-    {
-        if (&T2 != this)
-        {
-            hours = T2.hours;
-            minutes = T2.minutes;
-        }
-
-        return *this;
-    }
-
-    Time operator+(Time a)
-    {
-        Time sum;
-
-        sum.hours = hours + a.hours;
-        sum.minutes = minutes + a.minutes;
-
-        do
-        {
-        sum.hours++;
-        sum.minutes = sum.minutes - 60;
-        } while (sum.minutes/60 >= 1);
-
-        return Time(sum.hours, sum.minutes);
-    }
-
-    friend ostream & operator<<(ostream &OP, const Time &P4);
-    friend Time operator*(Time copy_, double number);
-    friend Time operator*(double number, Time copy_);
-};
 
  Time operator*(Time copy_, double number)
     {
